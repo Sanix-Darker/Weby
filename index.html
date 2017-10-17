@@ -1,82 +1,28 @@
-<html>
-<!-- Copyright 2015 Sanix , Cette application Html/Javascript est un OpenSource et peut etre Utiliser Librement par de Nouveaux programmeurs en WEB(html/CSS/javascript) mais a des Fins Gratuites! Toute modification ou duplication sera censionner juridiquement!-->
-
+<!DOCTYPE html>
+<html >
 <head>
-    <title>Sanix-JsCompiler</title>
-    <style>
-        #testHTML {
-            width: 100%;
-            height: 70%;
-            background-image: linear-gradient(rgb(255, 255, 255), rgb(200, 200, 200), rgb(255, 255, 255));
-        }
-        
-        table#editCode {
-            width: 99%;
-            position: absolute;
-            bottom: 10px;
-            height: 40%;
-        }
-        
-        #editCode td {
-            width: 47%;
-        }
-        
-        #editCode textarea {
-            width: 100%;
-            height: 100%;
-        }
-        
-        #editCode input {
-            padding: 5px;
-        }
-        
-        span {
-            width: 100%;
-            padding: 7px;
-            color: white;
-            font-size: 17px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Weby</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body onload="load();"><a href="pages/test.html">Aller a la page des TESTs</a>
-    <div id="testHTML"></div>
-    <table id="editCode">
-        <tr>
-            <td><span style="background:blue;">Code H/C<b style="float:right;"><input type="button" value=" GO " onclick="addHTML();"><input type="button" value=" END " onclick="resetHTML()"></b></span>
-                <br>
-                <textarea id="txtHTML" autocomlete="on"></textarea>
-            </td>
-            <td><span style="background:red;">Code JS<b  style="float:right;"><input type="button" value=" GO " onclick="addJS();"><input type="button" value=" END " onclick="resetJS()"></b></span>
-                <br>
-                <textarea autocomlete="on" id="txtJS"></textarea>
-            </td>
-        </tr>
-    </table>
-    <script>
-        function addHTML() {
-            document.getElementById('testHTML').innerHTML += document.getElementById('txtHTML').value;
-        }
-
-        function load() {
-            alert('Bienvenue sur --Sanix-Web-Compiler--;\n\nCompilateur de Code HTML et de Code Javascript\n\nPar Sanix');
-        }
-
-        function resetHTML() {
-            document.getElementById('testHTML').innerHTML = '';
-        }
-
-        function addJS() {
-            if (document.getElementById('ajout')) {
-                document.getElementById('ajout').parentNode.removeChild(document.getElementById('ajout'))
-            };
-            var newScript = document.createElement('script');
-            newScript.type = 'text/javascript';
-            newScript.text = document.getElementById('txtJS').value;
-            newScript.id = 'ajout';
-            document.getElementsByTagName('head')[0].appendChild(newScript);
-        }
-    </script>
+<body>
+  <div class="weby">
+  <header>
+    <h1 class="block">Weby</h1>
+    <a href="https://www.facebook.com/saadjio?ref=bookmarks" target="_blank">
+    <img src="https://fb-s-a-a.akamaihd.net/h-ak-fbx/v/t1.0-1/p160x160/18767831_1603166083041278_7073409388893466381_n.jpg?oh=d92549a5dcaf12fb448d4e63fb5c5662&oe=5A72A6F0&__gda__=1518794334_0c78636091884bbc25cc4b52f3335bac" alt="Chris Smith" class="avatar" />
+    </a>
+  </header>
+  <div class="pen">
+    <div class="editor">
+      <textarea id="pen-html" placeholder="Code HTML"></textarea>
+      <textarea id="pen-css" placeholder="Code CSS"></textarea>
+      <textarea id="pen-js" placeholder="Code JS"></textarea>
+    </div>
+    <div class="pen-output"></div>
+  </div>
+</div>
+<script  src="js/index.js"></script>
 </body>
-
 </html>

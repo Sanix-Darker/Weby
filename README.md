@@ -1,10 +1,4 @@
-# Petit-Compilateur-HTML-CSS-JS
-Il s'agit juste d'une petite app HTML et JS qui interprete en temps reel le code que l'on ecrit
+# WebY
+Simulate your web-code [Any externals libs require]
 -------------------------------------------------------------------------------------------------------------------
-NB: Ne vous attarder pas sur les fichiers en racines, le compilateur est dans le dossier compilateur que vous voyez juste en haut
-<table style="width:100%;">
-  <tr>
-    <td><img src="1c.PNG"></td>
-    <td><img src="2c.PNG"></td>
-  </tr>
-</table>
+NB: Do not dwell on the root files, the compiler is in the compiler folder you see right at the top.
