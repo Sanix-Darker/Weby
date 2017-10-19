@@ -11,6 +11,22 @@ var html = document.getElementById("pen-html"),
     };
   })();
 
+var initialContent = '<html >\
+      <head>\
+        <title>TEST</title>\
+      </head>\
+      <body>\
+        <center>\
+          <h1 style="margin-top:155px;">Welcome to Weby</h1>\
+          Create by <a href="https://github.com/Sanix-Darker" target="_blank">Sanix darker</a> -> (<a href="https://www.facebook.com/saadjio?ref=bookmarks" target="_blank">ANGE SAADJIO</a>)\
+          <p>\
+          "Modify your source code in the HTML, CSS, and JS boxes on the left to start working."<br>\
+            "Modifiez votre code source dans les zones HTML, CSS et JS &agrave; gauche pour commencer &agrave; travailler."\
+          </p>\
+        </center>\
+      </body>\
+      </html>';
+
 function remove(id) {
   var victim = document.getElementById(id);
   if (victim) {
@@ -19,20 +35,7 @@ function remove(id) {
 }
 
 
-output.innerHTML = '<html >\
-<head>\
-  <title>TEST</title>\
-</head>\
-<body>\
-  <center>\
-    <h1>Bienvenue sur Weby</h1>\
-    Cr&eacute;er par <a href="https://www.facebook.com/saadjio?ref=bookmarks" target="_blank">Sanix (ANGE SAADJIO)</a>\
-    <p>\
-      "Modifiez votre code source dans les zones HTML, CSS et JS &agrave; gauche pour commencer &agrave; travailler."\
-    </p>\
-  </center>\
-</body>\
-</html>';
+output.innerHTML = initialContent;
 
 
 function updateOutput() {
@@ -59,8 +62,14 @@ function updateOutput() {
 function refresh(){
   delay(function() {
     updateOutput();
-  }, 1000);
+  }, 100);
 }
+
+setInterval(function(){
+  if(html.value=='' && css.value=='' && js.value==''){
+      output.innerHTML = initialContent;
+  }
+}, 500);
 
 html.addEventListener("keyup", function() {
   refresh();
@@ -70,6 +79,9 @@ css.addEventListener("keyup", function() {
   refresh();
 });
 
+// add the delay because of alert test some times
 js.addEventListener("keyup", function() {
-  refresh();
+  delay(function() {
+    updateOutput();
+  }, 1300);
 });
