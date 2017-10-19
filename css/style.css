@@ -8,7 +8,12 @@ html {
   font-size: 20px!important;
 }
 
+.editor table{
+  background-color:#000;
+}
+
 .exemple{
+  width: 100%;
   color:black!important;
   padding: 4px;
 }
@@ -93,4 +98,7 @@ html {
   /*border:solid 2px #444;*/
   flex:1 1 75%;
   font-family:initial;
+}
+.weby{
+  box-shadow: 0 8px 12px rgba(0,0,0,0.45);
 }

@@ -3,37 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <title>Weby</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.min.css">
 </head>
-<!-- Gerer les cours de tel sorte d'ouvrir dans la meme zone des iframes pour les liens vers ces cours -->
+<!-- Gerer les cours de tel sorte d'ouvrir dans la meme zone des iframes pour les liens vers ces cours 
+  Prochain commit ou push (Elements plus fluides) et chargement des exemples, integation des lignes de code
+-->
 <body>
   <div class="weby">
   <header>
     <h1 class="block">Weby</h1>
     <a href="https://www.facebook.com/saadjio?ref=bookmarks" target="_blank">
-    <img src="https://fb-s-a-a.akamaihd.net/h-ak-fbx/v/t1.0-1/p160x160/18767831_1603166083041278_7073409388893466381_n.jpg?oh=d92549a5dcaf12fb448d4e63fb5c5662&oe=5A72A6F0&__gda__=1518794334_0c78636091884bbc25cc4b52f3335bac" alt="Chris Smith" class="avatar" />
+    <img src="https://avatars0.githubusercontent.com/u/22576758?s=460&v=4" alt="Sanix darker" class="avatar" />
     </a>
   </header>
   <div class="pen">
     <div class="editor">
       <table>
         <tr>
-          <td style="width: 80%;">
-            <select class="exemple" >
-              <option>Load examples</option>
-              <option > basics 1</option>
-              <option > basics 2</option>
-              <option > basics 3</option>
-              <option > basics 4</option>
-              <option > basics 5</option>
+          <td style="width: 70%;">
+            <select class="exemple" id="project">
+              <option selected="">Load projects</option>
+              <optgroup label="Examples">
+                <option id="1"> basics 1</option>
+                <option id="2"> basics 2</option>
+                <option id="3"> basics 3</option>
+              </optgroup>
+              <optgroup label="My projects">
+                <option > Test </option>
+              </optgroup>
             </select>
           </td>
           <td>
-            <select class="exemple">
-              <option>Options</option>
-              <option>Open a project</option>
-              <option>Save my project</option>
-              <option>Contact Sanix</option>
+            <select class="exemple" id="options">
+              <option selected="">Options</option>
+              <option id="open">Open a project</option>
+              <option id="save">Save my project</option>
+              <option id="learn1">Learn Html and CSS</option>
+              <option id="learn2">Learn Javascript</option>
+              <option id="param">Change parameters</option>
             </select>
           </td>
         </tr>
@@ -46,6 +53,6 @@
   </div>
 </div>
 
-<script  src="js/index.js"></script>
+<script  src="js/index.min.js"></script>
 </body>
 </html>

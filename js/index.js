@@ -3,6 +3,8 @@ var html = document.getElementById("pen-html"),
   js = document.getElementById("pen-js"),
   output = document.getElementById("output"),
   weby = document.getElementById("weby"),
+  projectSELECT = document.getElementById("project"),
+  optionSELECT = document.getElementById("options"),
   delay = (function() {
     var timer = 0;
     return function(callback, ms) {
@@ -11,21 +13,21 @@ var html = document.getElementById("pen-html"),
     };
   })();
 
-var initialContent = '<html >\
-      <head>\
-        <title>TEST</title>\
-      </head>\
-      <body>\
-        <center>\
-          <h1 style="margin-top:155px;">Welcome to Weby</h1>\
-          Create by <a href="https://github.com/Sanix-Darker" target="_blank">Sanix darker</a> -> (<a href="https://www.facebook.com/saadjio?ref=bookmarks" target="_blank">ANGE SAADJIO</a>)\
-          <p>\
-          "Modify your source code in the HTML, CSS, and JS boxes on the left to start working."<br>\
-            "<i>NB: All the global script or style could appear on the entire page, because i allowed it for learning!</i>"\
-          </p>\
-        </center>\
-      </body>\
-      </html>';
+var initialContent = '<html >'+
+      '<head>'+
+        '<title>TEST</title>'+
+      '</head>'+
+      '<body>'+
+        '<center>'+
+          '<h1 style="margin-top:155px;">Welcome to Weby</h1>'+
+          'Create by <a href="https://github.com/Sanix-Darker" target="_blank">Sanix darker</a> -> (<a href="https://www.facebook.com/saadjio?ref=bookmarks" target="_blank">ANGE SAADJIO</a>)'+
+          '<p>'+
+          '"Modify your source code in the HTML, CSS, and JS boxes on the left to start working."<br>'+
+            '"<i>NB: All the global script or style could appear on the entire page, because i allowed it for learning!</i>"'+
+          '</p>'+
+        '</center>'+
+      '</body>'+
+      '</html>';
 
 function remove(id) {
   var victim = document.getElementById(id);
@@ -44,12 +46,13 @@ function updateOutput() {
   remove("pen-script");
   
   // add HTML
-  output.innerHTML = html.value;
+  if(html.value!=""){ // We change the Html content untill it content some thing
+    output.innerHTML = html.value;
+  }
   
   // add CSS
   var style = document.createElement("style");
   style.id = "pen-style";
-
   style.innerHTML = css.value.replace(" *","#output *");
   document.head.appendChild(style);
   
@@ -94,3 +97,14 @@ js.addEventListener("keyup", function() {
     updateOutput();
   }, 1500);
 });
+
+//=====================Loading options==============================
+
+projectSELECT.addEventListener("change", function() {
+  alert("Still working on it");
+});
+
+optionSELECT.addEventListener("change", function() {
+  alert("Still working on it");
+});
+
