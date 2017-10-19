@@ -51,24 +51,27 @@ function updateOutput() {
   }
   
   // add CSS
-  var style = document.createElement("style");
-  style.id = "pen-style";
-  style.innerHTML = css.value.replace(" *","#output *");
-  document.head.appendChild(style);
-  
-  // add JS
-  var script = document.createElement("script");
-  script.id = "pen-script";
-  // I assumes the fact that i can not disallow the full change on the page intentionnally, a user need to know how the thing will work!
-  if(js.value.indexOf("document.write") || js.value.indexOf("document.writeln")){
-    advice = '<a href="" style="color:red;font-weight:bold;"> << Back to the simulator / Retour au simulateur</a>';
-
-    script.innerHTML = js.value.replace("')","").replace('")','').replace('("','(\'')+" <br> "+advice+ "')";
-  }else{
-    script.innerHTML = js.value;
+  if(css.value!=""){
+    var style = document.createElement("style");
+    style.id = "pen-style";
+    style.innerHTML = css.value.replace(" *","#output *");
+    document.head.appendChild(style);
   }
   
-  document.body.appendChild(script);
+  // add JS
+  if(js.value!=""){
+    var script = document.createElement("script");
+    script.id = "pen-script";
+    // I assumes the fact that i can not disallow the full change on the page intentionnally, a user need to know how the thing will work!
+    if(js.value.indexOf("document.write") || js.value.indexOf("document.writeln")){
+      advice = '<a href="" style="color:red;font-weight:bold;"> << Back to the simulator / Retour au simulateur</a>';
+      script.innerHTML = js.value.replace("')","").replace('")','').replace('("',"('")+" <br> "+advice+ "')";
+    }else{
+      script.innerHTML = js.value;
+    }
+    document.body.appendChild(script);
+  } 
+  
 }
 
 function refresh(){
