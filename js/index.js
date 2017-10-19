@@ -26,7 +26,7 @@ var initialContent = '<html >'+
         '<center>'+
           '<h1 style="margin-top:155px;">Welcome to Weby</h1>'+
           'Create by <a href="https://github.com/Sanix-Darker" target="_blank">Sanix darker</a> -> (<a href="https://www.facebook.com/saadjio?ref=bookmarks" target="_blank">ANGE SAADJIO</a>)'+
-          '<p>'+
+          '<p>You can see/download the code source of the project <a href="https://github.com/Sanix-Darker/Weby">here</a><br>'+
           '"Modify your source code in the HTML, CSS, and JS boxes on the left to start working."<br>'+
             '"<i>NB: All the global script or style could appear on the entire page, because i allowed it for learning!</i>"'+
           '</p>'+
@@ -126,7 +126,7 @@ optionSELECT.addEventListener("change", function() {
     case "learn2":
       console.log("learn2 selected.");
       break;
-    case "param":
+    case "lang":
       console.log("param selected.");
       break;
     default:
