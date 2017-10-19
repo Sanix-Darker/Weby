@@ -1,3 +1,8 @@
+/*
+* index.js
+* I assumes the fact that i can not disallow the full change on the page intentionnally, a user need to know how the thing will work!
+*/
+
 var html = document.getElementById("pen-html"),
   css = document.getElementById("pen-css"),
   js = document.getElementById("pen-js"),
@@ -62,8 +67,7 @@ function updateOutput() {
   if(js.value!=""){
     var script = document.createElement("script");
     script.id = "pen-script";
-    // I assumes the fact that i can not disallow the full change on the page intentionnally, a user need to know how the thing will work!
-    if(js.value.indexOf("document.write") || js.value.indexOf("document.writeln")){
+    if((js.value).includes("document.write")){
       advice = '<a href="" style="color:red;font-weight:bold;"> << Back to the simulator / Retour au simulateur</a>';
       script.innerHTML = js.value.replace("')","").replace('")','').replace('("',"('")+" <br> "+advice+ "')";
     }else{
@@ -108,6 +112,27 @@ projectSELECT.addEventListener("change", function() {
 });
 
 optionSELECT.addEventListener("change", function() {
+
+  switch (optionSELECT.value) {
+    case "open":
+      console.log("open selected.");
+      break;
+    case "save":
+      console.log("save selected.");
+      break;
+    case "learn1":
+      console.log("learn1 selected.");
+      break;
+    case "learn2":
+      console.log("learn2 selected.");
+      break;
+    case "param":
+      console.log("param selected.");
+      break;
+    default:
+      console.log("Nothing selected.");
+  }
+
   alert("Still working on it");
 });
 
