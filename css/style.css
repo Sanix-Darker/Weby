@@ -2,6 +2,15 @@ html {
   background-image:linear-gradient(#06c, #09f);
   height:100%;
 }
+.block{
+  color:white!important;
+  font-weight: bold!important;
+  font-size: 20px!important;
+}
+
+.exemple{
+  padding: 4px;
+}
 
 :not(.pen-output) body {
   font-family:sans-serif;

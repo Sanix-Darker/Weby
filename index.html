@@ -5,7 +5,7 @@
   <title>Weby</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
-
+<!-- Gerer les cours de tel sorte d'ouvrir dans la meme zone des iframes pour les liens vers ces cours -->
 <body>
   <div class="weby">
   <header>
@@ -16,13 +16,36 @@
   </header>
   <div class="pen">
     <div class="editor">
+      <table>
+        <tr>
+          <td style="width: 80%;">
+            <select class="exemple" >
+              <option>Load examples</option>
+              <option > basics 1</option>
+              <option > basics 2</option>
+              <option > basics 3</option>
+              <option > basics 4</option>
+              <option > basics 5</option>
+            </select>
+          </td>
+          <td>
+            <select class="exemple">
+              <option>Options</option>
+              <option>Open a project</option>
+              <option>Save my project</option>
+              <option>Contact Sanix</option>
+            </select>
+          </td>
+        </tr>
+      </table>
       <textarea id="pen-html" placeholder="Code HTML"></textarea>
       <textarea id="pen-css" placeholder="Code CSS"></textarea>
       <textarea id="pen-js" placeholder="Code JS"></textarea>
     </div>
-    <div class="pen-output"></div>
+    <div class="pen-output" id="output"></div>
   </div>
 </div>
+
 <script  src="js/index.js"></script>
 </body>
 </html>

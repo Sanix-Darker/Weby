@@ -1,7 +1,7 @@
 var html = document.getElementById("pen-html"),
   css = document.getElementById("pen-css"),
   js = document.getElementById("pen-js"),
-  output = document.querySelector(".pen-output"),
+  output = document.getElementById("output"),
   weby = document.getElementById("weby"),
   delay = (function() {
     var timer = 0;
@@ -21,7 +21,7 @@ var initialContent = '<html >\
           Create by <a href="https://github.com/Sanix-Darker" target="_blank">Sanix darker</a> -> (<a href="https://www.facebook.com/saadjio?ref=bookmarks" target="_blank">ANGE SAADJIO</a>)\
           <p>\
           "Modify your source code in the HTML, CSS, and JS boxes on the left to start working."<br>\
-            "Modifiez votre code source dans les zones HTML, CSS et JS &agrave; gauche pour commencer &agrave; travailler."\
+            "<i>NB: All the global script or style could appear on the entire page, because i allowed it for learning!</i>"\
           </p>\
         </center>\
       </body>\
@@ -55,7 +55,15 @@ function updateOutput() {
   // add JS
   var script = document.createElement("script");
   script.id = "pen-script";
-  script.innerHTML = js.value;
+  // I assumes the fact that i can not disallow the full change on the page intentionnally, a user need to know how the thing will work!
+  if(js.value.indexOf("document.write") || js.value.indexOf("document.writeln")){
+    advice = '<a href="" style="color:red;font-weight:bold;"> << Back to the simulator / Retour au simulateur</a>';
+
+    script.innerHTML = js.value.replace("')","").replace('")','').replace('("','(\'')+" <br> "+advice+ "')";
+  }else{
+    script.innerHTML = js.value;
+  }
+  
   document.body.appendChild(script);
 }
 
@@ -83,5 +91,5 @@ css.addEventListener("keyup", function() {
 js.addEventListener("keyup", function() {
   delay(function() {
     updateOutput();
-  }, 1300);
+  }, 1500);
 });

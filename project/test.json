@@ -1,0 +1,5 @@
+{
+	"html":"test",
+	"css":"*{color:red;}",
+	"js":"alert('test')"
+}

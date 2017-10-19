@@ -1,4 +1,5 @@
 # WebY
 Simulate your web-code [Any externals libs require]
 -------------------------------------------------------------------------------------------------------------------
-NB: Do not dwell on the root files, the compiler is in the compiler folder you see right at the top.
+Am stilll working on in to integrate Exercise and examples<br>
+NB: Just launch the index.html file, it's simple as it! Let me know, if there are some trouble
