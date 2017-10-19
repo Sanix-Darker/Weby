@@ -49,7 +49,8 @@ function updateOutput() {
   // add CSS
   var style = document.createElement("style");
   style.id = "pen-style";
-  style.innerHTML = css.value;
+
+  style.innerHTML = css.value.replace(" *","#output *");
   document.head.appendChild(style);
   
   // add JS
@@ -74,7 +75,7 @@ function refresh(){
 }
 
 setInterval(function(){
-  if(html.value=='' && css.value=='' && js.value==''){
+  if(html.value=='' && js.value==''){
       output.innerHTML = initialContent;
   }
 }, 500);
