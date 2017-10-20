@@ -1,5 +1,5 @@
 {
-	"html":"test",
+	"html":"<center><h1>Test</h1></center>",
 	"css":"*{color:red;}",
-	"js":"alert('test')"
+	"js":"alert('Test')"
 }

@@ -26,20 +26,20 @@
         <tr>
           <td style="width: 70%;">
             <select class="exemple" id="project">
-              <option selected="">Load projects</option>
-              <optgroup label="Examples">
-                <option data-file="base1.json"> basics 1</option>
-                <option data-file="base2.json"> basics 2</option>
-                <option data-file="base3.json"> basics 3</option>
-              </optgroup>
+              <option selected="" data-file="none">Load projects</option>
+<!--               <optgroup label="Examples">
+                <option value="base1.json"> basics 1</option>
+                <option value="base2.json"> basics 2</option>
+                <option value="base3.json"> basics 3</option>
+              </optgroup> -->
               <optgroup label="My projects">
-                <option data-file="test.json"> Test </option>
+                <option value="test.json"> Test </option>
               </optgroup>
             </select>
           </td>
           <td>
             <select class="exemple" id="options">
-              <option selected="">Options</option>
+              <option selected="" data-file="none">Options</option>
               <option value="open">Open a project</option>
               <option value="save">Save my project</option>
               <option value="learn1">Learn Html and CSS</option>
@@ -49,9 +49,9 @@
           </td>
         </tr>
       </table>
-      <textarea id="pen-html" placeholder="Code HTML"></textarea>
-      <textarea id="pen-css" placeholder="Code CSS"></textarea>
-      <textarea id="pen-js" placeholder="Code JS"></textarea>
+      <textarea id="pen-html" placeholder="Write your HTML code here"></textarea>
+      <textarea id="pen-css" placeholder="Write your CSS Code here"></textarea>
+      <textarea id="pen-js" placeholder="Write your JS Code here"></textarea>
     </div>
     <div class="pen-output" id="output"></div>
   </div>

@@ -108,7 +108,24 @@ js.addEventListener("keyup", function() {
 //=====================Loading options==============================
 
 projectSELECT.addEventListener("change", function() {
-  alert("Still working on it");
+  
+  var xmlhttp = new XMLHttpRequest(), txt='', content;
+  xmlhttp.onreadystatechange = function(){
+    if(xmlhttp.status == 200 && xmlhttp.readyState == 4){
+        txt = xmlhttp.responseText;
+        //console.log("txt: "+txt);
+
+        content = JSON.parse(txt);
+        //console.log("content: "+content);
+        html.value= content.html;
+        css.value= content.css;
+        js.value= content.js;
+        updateOutput();
+    }
+  };
+  xmlhttp.open("GET","project/"+projectSELECT.value,true);
+  xmlhttp.send();
+
 });
 
 optionSELECT.addEventListener("change", function() {
