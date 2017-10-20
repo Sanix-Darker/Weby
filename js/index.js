@@ -16,6 +16,7 @@
     last_js = js.value,
     problem = false, // To check if something going wrong and blog executions
     file_ = document.getElementById("file_"),
+    link = document.getElementById('linkydoo'),
     xmlhttp = new XMLHttpRequest(),
     output = document.getElementById("output"),
     weby = document.getElementById("weby"),
@@ -180,10 +181,34 @@
 
       switch (optionSELECT.value) {
         case "open":
+        // Open the project Locally
           file_.click();
           break;
         case "save":
-          console.log("save selected.");
+          // Saving the project Locally
+          var projectName = prompt("Please enter your project name", "My project");
+
+          if (projectName != null) {
+
+              projectName.replace(".","_");
+              var project_content = '{'+
+                                        '"html": "'+html.value.replace('"','\"')+'",'+
+                                        '"css": "'+css.value.replace('"','\"')+'",'+
+                                        '"js": "'+js.value.replace('"','\"')+'"'+
+                                    '}';
+
+             //Save the file contents as a DataURI
+             var dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(project_content);
+
+             //Write it as the href for the link
+             link.download=(projectName+".json");
+             link.href = dataUri;
+             link.click();
+
+          }else{
+            alert("If you want to save your project, enter a name.");
+          }
+
           break;
         case "learn1":
           console.log("learn1 selected.");
