@@ -8,6 +8,10 @@ html {
   font-size: 20px!important;
 }
 
+#file_{
+ display: none; 
+}
+
 .editor table{
   background-color:#000;
 }
