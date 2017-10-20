@@ -3,6 +3,10 @@
   * I assumes the fact that i can not disallow the full change on the page intentionnally, a user need to know how the thing will work!
   */
 
+  // TO BE BUILD
+  // EXAMPLES PROJECT WILL BE TABLES in variable
+  // ===========================================
+
   // Variables
   var html = document.getElementById("pen-html"),
     css = document.getElementById("pen-css"),
@@ -98,7 +102,7 @@
   * Open external JSON project
 */
 
-  function ReadExternalProject(){
+  function ReadProject(){
     emptyAll();
 
     //Get the file object
@@ -125,37 +129,6 @@
     fileReader.readAsText(file_R);
   }
 
-/*
-  *
-  * ReadInternalProject
-  *
-  * Open internal JSON project in the project directory
-*/
-  function ReadInternalProject(path){
-    emptyAll();
-
-    output.innerHTML = "<center><br><br><br><br><h3> <img src='img/ajax-loader.gif'> Loading project..... </h3></center>";
-    xmlhttp.onreadystatechange = function(){
-      if(xmlhttp.status == 200 && xmlhttp.readyState == 4){
-          txt = xmlhttp.responseText;
-          //console.log("txt: "+txt);
-          if(isJson(txt)){
-            content = JSON.parse(txt);
-            // in the editors, put the code
-            html.value= content.html;
-            css.value= content.css;
-            js.value= content.js;
-            updateOutput();
-          }else{
-            problem = true;
-            output.innerHTML = "<center><br><br><br><br><h4> There is a problem loading your project! </h4></center>";
-          }
-
-      }
-    };
-    xmlhttp.open("GET",path,true);
-    xmlhttp.send();
-  }
 
   function refresh(){
     delay(function() {
@@ -197,33 +170,9 @@
 
   //=====================Loading options==============================
 
-  // Fetching all projects
-    xmlhttp.onreadystatechange = function(){
-      if(xmlhttp.status == 200 && xmlhttp.readyState == 4){
-          // A simple trick to list and get all .json file in the project directory
-        var rawHTML = xmlhttp.responseText,
-            doc = document.createElement("html"),
-            links = doc.getElementsByTagName("a"),
-            urls = [],
-            linkk='';
-
-        doc.innerHTML = rawHTML;
-
-        for (var i=0; i<links.length; i++) {
-            linkk = links[i].getAttribute("href").replace("/project/", "");
-            // if it is a .json href
-            if(linkk.includes(".json")) projectSELECT.innerHTML += "<option value='"+linkk+"' >"+linkk+"</option>";
-        }
-
-      }
-    };
-    xmlhttp.open("GET","project/",true);
-    xmlhttp.send();
-
-
     // For select a project on the list of projects
     projectSELECT.addEventListener("change", function() {
-      ReadInternalProject("project/"+projectSELECT.value);
+      //ReadInternalProject("project/"+projectSELECT.value);
     });
 
     // To load Options!!!
@@ -248,13 +197,14 @@
         default:
           console.log("Nothing selected.");
       }
+      optionSELECT.value = 0;
 
     });
 
     if (window.File && window.FileReader && window.FileList && window.Blob) {
 
       file_.addEventListener("change", function() {
-        ReadExternalProject();
+        ReadProject();
       }, false);
       
     }
