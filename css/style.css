@@ -1,6 +1,6 @@
 html {
-  background-image:linear-gradient(#06c, #09f);
-  height:100%;
+  background-image:linear-gradient(#06c, #09f)!important;
+  height:100%!important;
 }
 .block{
   color:white!important;
@@ -14,10 +14,11 @@ html {
 
 .editor{
   min-width: 280px!important;
+  max-width: 300px!important;
 }
 
 .editor table{
-  background-color:#000;
+  background-color:#000!important;
 }
 
 textarea::-webkit-scrollbar-track
@@ -38,85 +39,87 @@ textarea::-webkit-scrollbar-thumb
 
 
 .exemple, .exemple option {
-  width: 100%;
+  width: 100%!important;
   color:black!important;
-  padding: 4px;
+  padding: 4px!important;
 }
 
 :not(.pen-output) body {
-  font-family:sans-serif;
-  margin:0;
+  font-family:sans-serif!important;
+  margin:0!important;
 }
 
 :not(.pen-output) .weby {
-  border-radius:4px;
-  margin:2vh 2vw;
-  overflow:hidden;
+  border-radius:4px!important;
+  margin:2vh 2vw!important;
+  overflow:hidden!important;
 }
 
 :not(.pen-output) header {
   background-color:#222!important;
-  box-sizing:border-box;
-  color:#fff;
-  font-family:Lato, sans-serif;
-  height: 10vh;
-  padding:1vh 1vw;
-  width:96vw;
+  box-sizing:border-box!important;
+  color:#fff!important;
+  font-family:Lato, sans-serif!important;
+  height: 10vh!important;
+  padding:1vh 1vw!important;
+  width:96vw!important;
 }
 
 :not(.pen-output) .avatar {
-  border-radius:2px;
-  float:right;
-  height:8vh;
-  width:8vh;
+  border-radius:2px!important;
+  float:right!important;
+  height:8vh!important;
+  width:8vh!important;
 }
 
 :not(.pen-output) h1.block {
-  display:inline-block;
-  font-size:1rem;
-  font-weight:normal;
-  margin:2vh 0;
+  display:inline-block!important;
+  font-size:1rem!important;
+  font-weight:normal!important;
+  margin:2vh 0!important;
 }
 
 :not(.pen-output) footer {
-  background-color:#333;
-  box-sizing:border-box;
-  color:#888;
-  font-size:.75em;
-  height:5vh;
-  padding:1vh 1vw;
-  text-align:center;
-  width:96vw;
+  background-color:#333!important;
+  box-sizing:border-box!important;
+  color:#888!important;
+  font-size:.75em!important;
+  height:5vh!important;
+  padding:1vh 1vw!important;
+  text-align:center!important;
+  width:96vw!important;
 }
 
 :not(.pen-output) .pen {
-  box-shadow: 0 8px 12px rgba(0,0,0,0.45);
-  display:flex;
-  height:81vh;
-  width:96vw;
+  box-shadow: 0 8px 12px rgba(0,0,0,0.45)!important;
+  display:flex!important;
+  height:81vh!important;
+  width:96vw!important;
 }
 
 :not(.pen-output) .editor {
-  display:flex;
-  flex:1 1 25%;
-  flex-direction:column;
-  justify-content:space-between;
+  display:flex!important;
+  flex:1 1 25%!important;
+  flex-direction:column!important;
+  justify-content:space-between!important;
 }
 
 :not(.pen-output) textarea {
 /*  background-color:#222;
   border:solid 2px #444;*/
-  box-sizing:border-box;
-  color:#222;
-  display:block;
-  flex:1 1;
-  resize:none;
-  transition:all .3s ease-in-out;
-  width:100%;
+  box-sizing:border-box!important;
+  color:#222!important;
+  display:block!important;
+  flex:1 1!important;
+  resize:none!important;
+  transition:all .3s ease-in-out!important;
+  width:100%!important;
+  background: white!important;
+  color: black!important;
 }
 
 :not(.pen-output) textarea:focus {
-  flex:1 1 80%;
+  flex:1 1 80%!important;
 }
 
 .pen-output {
