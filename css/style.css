@@ -12,9 +12,30 @@ html {
  display: none; 
 }
 
+.editor{
+  min-width: 280px!important;
+}
+
 .editor table{
   background-color:#000;
 }
+
+textarea::-webkit-scrollbar-track
+{
+  background-color: #CDCDCD;
+}
+
+textarea::-webkit-scrollbar
+{
+  width: 10px;
+  background-color: #444444;
+}
+
+textarea::-webkit-scrollbar-thumb
+{
+  background-color: #444444;
+}
+
 
 .exemple, .exemple option {
   width: 100%;
@@ -34,7 +55,7 @@ html {
 }
 
 :not(.pen-output) header {
-  background-color:#000;
+  background-color:#222!important;
   box-sizing:border-box;
   color:#fff;
   font-family:Lato, sans-serif;
@@ -69,6 +90,7 @@ html {
 }
 
 :not(.pen-output) .pen {
+  box-shadow: 0 8px 12px rgba(0,0,0,0.45);
   display:flex;
   height:81vh;
   width:96vw;
@@ -89,7 +111,7 @@ html {
   display:block;
   flex:1 1;
   resize:none;
-  transition:all .5s ease-in-out;
+  transition:all .3s ease-in-out;
   width:100%;
 }
 
@@ -104,5 +126,5 @@ html {
   font-family:initial;
 }
 .weby{
-  box-shadow: 0 8px 12px rgba(0,0,0,0.45);
+  
 }

@@ -30,9 +30,7 @@
       };
     })();
 
-  var txt='', content;
-
-  var initialContent = '<center>'+
+  var txt='', content, initialContent = '<center>'+
                           '<h1 style="margin-top:155px;">Welcome to Weby</h1>'+
                           'Create by <a href="https://github.com/Sanix-Darker" target="_blank">Sanix darker</a> -> (<a href="https://www.facebook.com/saadjio?ref=bookmarks" target="_blank">ANGE SAADJIO</a>)'+
                           '<p>You can see/download the code source of the project <a href="https://github.com/Sanix-Darker/Weby">here</a><br>'+
@@ -41,110 +39,14 @@
                           '</p>'+
                         '</center>';
 
+
+  // Enable the tab character onkeypress (onkeydown) inside textarea...
+  enableTab(html);
+  enableTab(css);
+  enableTab(js);
+
+
   output.innerHTML = initialContent;
-
-
-
-  function remove(id) {
-    var victim = document.getElementById(id);
-    if (victim) {
-      victim.parentNode.removeChild(victim);
-    }
-  }
-
-  function emptyAll(){
-    html.value="", css.value="", js.value="";
-  }
-
-
-  function updateOutput() {
-    // clean up
-    remove("pen-style");
-    remove("pen-script");
-    
-    // add HTML
-    if(html.value!="" && html.value!=last_html){ // We change the Html content untill it content some thing
-      output.innerHTML = html.value;
-      last_html = html.value;
-    }
-    
-    // add CSS
-    if(css.value!=""){
-      var style = document.createElement("style");
-      style.id = "pen-style";
-      style.innerHTML = css.value.replace(" *","#output *");
-      last_css = css.value.replace(" *","#output *");
-      document.head.appendChild(style);
-    }
-    
-    // add JS
-    if(js.value!="" && js.value!=last_js){
-      var script = document.createElement("script");
-      script.id = "pen-script";
-      // TO manage if all the document die or is affected
-      if((js.value).includes("document.write")){
-
-        advice = '<a href="" style="color:red;font-weight:bold;"> << Back to the simulator / Retour au simulateur</a>';
-        script.innerHTML = js.value.replace("')","").replace('")','').replace('("',"('")+" <br> "+advice+ "')";
-      
-      }else
-        script.innerHTML = js.value;
-
-      last_js = js.value;
-      document.body.appendChild(script);
-    } 
-    
-  }
-
-/*
-  *
-  * ReadExternalProject
-  *
-  * Open external JSON project
-*/
-
-  function ReadProject(){
-    emptyAll();
-
-    //Get the file object
-    var file_R = file_.files[0];
-
-    //Initialize the FileReader object to read the 2file 
-    var fileReader = new FileReader(); 
-    fileReader.onload = function (e) {
-
-      output.innerHTML = "<center><br><br><br><br><h3> <img src='img/ajax-loader.gif'> Loading project..... </h3></center>";
-      if(isJson(fileReader.result)){
-        content = JSON.parse(fileReader.result);
-        // in the editors, put the code
-        html.value= content.html;
-        css.value= content.css;
-        js.value= content.js;
-        updateOutput();
-      }else{
-        problem = true;
-        output.innerHTML = "<center><br><br><br><br><h4> There is a problem loading your project! </h4></center>";
-      }
-
-    } 
-    fileReader.readAsText(file_R);
-  }
-
-
-  function refresh(){
-    delay(function() {
-      updateOutput();
-    }, 100);
-  }
-
-  function isJson(str) {
-      try {
-          JSON.parse(str);
-      } catch (e) {
-          return false;
-      }
-      return true;
-  }
 
  
   setInterval(function(){
@@ -155,11 +57,11 @@
 
 
   html.addEventListener("keyup", function() {
-    refresh();
+    updateOutput();
   });
 
   css.addEventListener("keyup", function() {
-    refresh();
+    updateOutput();
   });
 
   // add the delay because of alert test some times
@@ -181,34 +83,12 @@
 
       switch (optionSELECT.value) {
         case "open":
-        // Open the project Locally
+          // Open a project
           file_.click();
           break;
         case "save":
           // Saving the project Locally
-          var projectName = prompt("Please enter your project name", "My project");
-
-          if (projectName != null) {
-
-              projectName.replace(".","_");
-              var project_content = '{'+
-                                        '"html": "'+html.value.replace('"','\"')+'",'+
-                                        '"css": "'+css.value.replace('"','\"')+'",'+
-                                        '"js": "'+js.value.replace('"','\"')+'"'+
-                                    '}';
-
-             //Save the file contents as a DataURI
-             var dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(project_content);
-
-             //Write it as the href for the link
-             link.download=(projectName+".json");
-             link.href = dataUri;
-             link.click();
-
-          }else{
-            alert("If you want to save your project, enter a name.");
-          }
-
+          saveProject();
           break;
         case "learn1":
           console.log("learn1 selected.");
@@ -216,8 +96,11 @@
         case "learn2":
           console.log("learn2 selected.");
           break;
-        case "lang":
-          console.log("param selected.");
+        case "loadExemples":
+          console.log("load selected.");
+          break;
+        case "exit":
+          close_window();
           break;
         default:
           console.log("Nothing selected.");
