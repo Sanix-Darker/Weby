@@ -15,7 +15,7 @@
 <body>
   <div class="weby">
   <header>
-    <h1 class="block">Weby</h1>
+    <h1 class="block" style="font-size: 28px;">Weby</h1>
     <a href="https://www.facebook.com/saadjio?ref=bookmarks" target="_blank">
     <img src="https://avatars0.githubusercontent.com/u/22576758?s=460&v=4" alt="Sanix darker" class="avatar" />
     </a>
@@ -34,9 +34,11 @@
               <option selected="" value="0">Options</option>
               <option value="open">Open a project</option>
               <option value="save">Save my project</option>
-              <option value="learn1">Learn Html and CSS</option>
-              <option value="learn2">Learn Javascript</option>
-              <option value="loadExemples">Load examples</option>
+              <option value="angular">AngularJS App Test Mode</option>
+              <option value="jquery">Jquery App Test Mode</option>
+              <option value="vu">Vu App Test Mode</option>
+              <option value="react">React App Test Mode</option>
+              <option value="loadExemples">Load some examples</option>
               <option value="exit">Exit</option>
             </select>
           </td>
@@ -44,11 +46,12 @@
       </table>
       <a href="#" id="linkydoo" download=""></a>
       <input type="file" id="file_">
-      <textarea id="pen-html" placeholder="Write your HTML code here"></textarea>
-      <textarea id="pen-css" placeholder="Write your CSS Code here"></textarea>
-      <textarea id="pen-js" placeholder="Write your JS Code here"></textarea>
+      <textarea id="pen-html"><!--Write your HTML code here... --></textarea>
+      <textarea id="pen-js">//Write your JS code here...</textarea>
     </div>
     <div class="pen-output" id="output"></div>
+
+    <textarea id="pen-css" style="min-width: 230px;max-width: 230px;">/*Write your CSS here...*/</textarea>
   </div>
 </div>
 <script  src="js/function.js"></script>

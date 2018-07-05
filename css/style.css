@@ -5,7 +5,7 @@ html {
 .block{
   color:white!important;
   font-weight: bold!important;
-  font-size: 20px!important;
+  font-size: 28px!important;
 }
 
 #file_, #linkydoo{
@@ -74,7 +74,7 @@ textarea::-webkit-scrollbar-thumb
 
 :not(.pen-output) h1.block {
   display:inline-block!important;
-  font-size:1rem!important;
+  /*font-size:1rem!important;*/
   font-weight:normal!important;
   margin:2vh 0!important;
 }

@@ -116,7 +116,7 @@ function remove(id) {
 	  if (projectName != null) {
 
 	      projectName.replace(".","_");
-	      var project_content = '{'+
+	      var project_content = '{'+ // Do the join here
 	                                '"html": "'+html.value.replace(/[\r\n]/g, "~w~").replace('"','\"')+'",'+
 	                                '"css": "'+css.value.replace(/[\r\n]/g, "~w~").replace('"','\"')+'",'+
 	                                '"js": "'+js.value.replace(/[\r\n]/g, "~w~").replace('"','\"')+'"'+

@@ -41,9 +41,11 @@
       };
     })();
 
-  var txt='', content, initialContent = '<center>'+
-                          '<h1 style="margin-top:155px;">Welcome to Weby</h1>'+
-                          'Create by <a href="https://github.com/Sanix-Darker" target="_blank">Sanix darker</a> -> (<a href="https://www.facebook.com/saadjio?ref=bookmarks" target="_blank">ANGE SAADJIO</a>)'+
+  var txt='',
+      content,
+      initialContent = '<center>'+
+                          '<img src="https://avatars1.githubusercontent.com/u/22576758?s=400&v=4" style="border-radius: 100%;width:157px;margin-top:100px;"><h1>Welcome to Weby</h1>'+
+                          'Created by <a href="https://github.com/Sanix-Darker" target="_blank">Sanix darker</a>'+
                           '<p>You can see/download the code source of the project <a href="https://github.com/Sanix-Darker/Weby">here</a><br>'+
                           '"Modify your source code in the HTML, CSS, and JS boxes on the left to start working."<br>'+
                             '"<i>NB: All the global script or style could appear on the entire page, because i allowed it for learning!</i>"'+
@@ -89,6 +91,23 @@
       //ReadInternalProject("project/"+projectSELECT.value);
     });
 
+
+  function SetModeCode(html, css, js){
+    output.innerHTML = '';
+    output.innerHTML += '<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.js"></script>';
+      document.getElementById("pen-html").value = '<center><h1>AngularJs Mode selected</h1></center>';
+      document.getElementById("pen-js").value = '\n\
+      var module = angular.module("myModule", []);\n\
+      module.controller("myController", function($scope) {\n\
+        $scope.message = "Welcome to the WeBy Angular";\n\
+        \n\
+        $scope.changeMessage = function() {\n\
+          \n\
+          $scope.message = "Hello Universe!";\n\
+        };\n\
+      });';
+  }
+
     // To load Options!!!
     optionSELECT.addEventListener("change", function() {
 
@@ -101,11 +120,24 @@
           // Saving the project Locally
           saveProject();
           break;
-        case "learn1":
-          console.log("learn1 selected.");
+        case "angular":
+          alert("Angular JS mode selected.");
+          console.log("Angular JS mode selected.");
+          
           break;
-        case "learn2":
-          console.log("learn2 selected.");
+        case "jquery":
+          alert("Jquery mode selected.");
+          console.log("Jquery mode is selected.");
+
+          break;
+        case "vu":
+          alert("Vue mode is selected.");
+          console.log("Vue mode is selected.");
+          
+          break;
+        case "react":
+          console.log("React mode is selected.");
+
           break;
         case "loadExemples":
           console.log("load selected.");
