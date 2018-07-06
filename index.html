@@ -34,10 +34,11 @@
               <option selected="" value="0">Options</option>
               <option value="open">Open a project</option>
               <option value="save">Save my project</option>
-              <option value="angular">AngularJS App Test Mode</option>
-              <option value="jquery">Jquery App Test Mode</option>
-              <option value="vu">Vu App Test Mode</option>
-              <option value="react">React App Test Mode</option>
+<!--               <option value="angular">Set AngularJS Test Mode</option>
+              <option value="jquery">Set Jquery Test Mode</option>
+              <option value="vu">Set Vue Test Mode</option>
+              <option value="react">Set React Test Mode</option>
+              <option value="default">Set Default Mode</option> -->
               <option value="loadExemples">Load some examples</option>
               <option value="exit">Exit</option>
             </select>
@@ -54,7 +55,13 @@
     <textarea id="pen-css" style="min-width: 230px;max-width: 230px;">/*Write your CSS here...*/</textarea>
   </div>
 </div>
-<script  src="js/function.js"></script>
-<script  src="js/index.js"></script>
+<script type="text/javascript">
+  var angular = false,
+      jquery = false,
+      vu = false,
+      react = false;
+</script>
+<script src="js/function.js"></script>
+<script src="js/index.js"></script>
 </body>
 </html>

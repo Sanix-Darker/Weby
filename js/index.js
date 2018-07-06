@@ -92,21 +92,48 @@
     });
 
 
-  function SetModeCode(html, css, js){
-    output.innerHTML = '';
-    output.innerHTML += '<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.js"></script>';
-      document.getElementById("pen-html").value = '<center><h1>AngularJs Mode selected</h1></center>';
-      document.getElementById("pen-js").value = '\n\
-      var module = angular.module("myModule", []);\n\
-      module.controller("myController", function($scope) {\n\
-        $scope.message = "Welcome to the WeBy Angular";\n\
-        \n\
-        $scope.changeMessage = function() {\n\
-          \n\
-          $scope.message = "Hello Universe!";\n\
-        };\n\
-      });';
-  }
+    function SetModeCode(mode){
+
+      alert(mode+" mode selected.");
+      console.log(mode+" mode is selected.");
+
+      if(mode == "angular"){
+        
+        angular = true;
+
+        document.getElementById("pen-html").value = '<center><h1>AngularJs Mode selected</h1></center>\n\
+          <div ng-app="myModule" class="ng-binding ng-scope">\n\
+            <div ng-controller="myController" class="ng-scope">\n\
+              <input type="text" ng-model="message" class="ng-pristine ng-untouched ng-valid"><br>\n\
+              {{message}}\n\
+              <br />\n\
+              <button ng-click="changeMessage()">Change Message</button>\n\
+            </div>\n\
+          </div>';
+
+        document.getElementById("pen-js").value = '\n\
+          var module = angular.module("myModule", []);\n\
+          module.controller("myController", function($scope) {\n\
+            $scope.message = "Welcome to the WeBy Angular";\n\
+            $scope.changeMessage = function() {\n\
+              $scope.message = "Hello Universe!";\n\
+            };\n\
+        });';
+
+      }else if(mode == "jquery"){
+        jquery = true;
+
+      }else if(mode == "vu"){
+        vu = true;
+
+      }else if(mode == "react"){
+        react = true;
+
+      }else{
+
+      }
+
+    }
 
     // To load Options!!!
     optionSELECT.addEventListener("change", function() {
@@ -121,22 +148,28 @@
           saveProject();
           break;
         case "angular":
-          alert("Angular JS mode selected.");
-          console.log("Angular JS mode selected.");
-          
+
+          SetModeCode("angular");
+
           break;
         case "jquery":
-          alert("Jquery mode selected.");
-          console.log("Jquery mode is selected.");
+
+          SetModeCode("Jquery");
 
           break;
         case "vu":
-          alert("Vue mode is selected.");
-          console.log("Vue mode is selected.");
-          
+
+          SetModeCode("vu");
+
           break;
         case "react":
-          console.log("React mode is selected.");
+
+          SetModeCode("react");
+
+          break;
+        case "default":
+
+          SetModeCode("default");
 
           break;
         case "loadExemples":

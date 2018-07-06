@@ -53,6 +53,24 @@ function remove(id) {
       document.head.appendChild(style);
     }
     
+    if(angular == true){
+
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src = "js/angular.js";
+      document.body.appendChild(script);
+    
+    }else if(jquery == true){
+
+    }else if(vu == true){
+      
+    }else if(react == true){
+      
+    }else{
+      
+    }
+    console.log(angular);
+
     // add JS
     if(js.value!="" && js.value!=last_js && js.value.length>0){
       var script = document.createElement("script");
@@ -122,7 +140,7 @@ function remove(id) {
 	                                '"js": "'+js.value.replace(/[\r\n]/g, "~w~").replace('"','\"')+'"'+
 	                            '}';
 
-	     //Save the file contents as a DataURI
+	     //Save the file contents as a script
 	     var dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(project_content);
 
 	     //Write it as the href for the link
