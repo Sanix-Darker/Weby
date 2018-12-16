@@ -52,6 +52,16 @@
                           '</p>'+
                         '</center>';
 
+  // Triggering button BOXes
+  document.getElementById("htmlbox").onclick = function(){
+    document.getElementById("pen-html").focus();
+  };
+  document.getElementById("jsbox").onclick = function(){
+    document.getElementById("pen-js").focus();
+  };
+  document.getElementById("cssbox").onclick = function(){
+    document.getElementById("pen-css").focus();
+  };
 
   // Enable the tab character onkeypress (onkeydown) inside textarea...
   enableTab(html);

@@ -39,7 +39,6 @@ textarea::-webkit-scrollbar-thumb
 
 
 .exemple, .exemple option {
-  width: 100%!important;
   color:black!important;
   padding: 4px!important;
 }
@@ -130,4 +129,7 @@ textarea::-webkit-scrollbar-thumb
 }
 .weby{
   
+}
+button{
+  cursor:pointer;
 }

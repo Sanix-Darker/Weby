@@ -21,7 +21,7 @@
     </a>
   </header>
   <div class="pen">
-    <div class="editor">
+    <div class="editora">
       <table style="width:100%;">
         <tr>
           <td style="width: 70%;display: none;">
@@ -29,12 +29,12 @@
               <option selected="" data-file="none">Load projects</option>
             </select>
           </td>
-          <td style="width: 100%">
-            <select class="exemple" id="options">
+          <td style="width: 10%">
+            <select class="exemple" id="options" style="position:absolute">
               <option selected="" value="0">Options</option>
               <option value="open">Open a project</option>
               <option value="save">Save my project</option>
-<!--               <option value="angular">Set AngularJS Test Mode</option>
+        <!--  <option value="angular">Set AngularJS Test Mode</option>
               <option value="jquery">Set Jquery Test Mode</option>
               <option value="vu">Set Vue Test Mode</option>
               <option value="react">Set React Test Mode</option>
@@ -47,12 +47,16 @@
       </table>
       <a href="#" id="linkydoo" download=""></a>
       <input type="file" id="file_">
-      <textarea id="pen-html"><!--Write your HTML code here... --></textarea>
-      <textarea id="pen-js">//Write your JS code here...</textarea>
     </div>
     <div class="pen-output" id="output"></div>
-
-    <textarea id="pen-css" style="min-width: 230px;max-width: 230px;">/*Write your CSS here...*/</textarea>
+    <textarea id="pen-html"><!--Write your HTML code here... --></textarea>
+    <textarea id="pen-js">//Write your JS code here...</textarea>
+    <textarea id="pen-css" >/*Write your CSS here...*/</textarea>
+  </div>
+  <div style="float:right;">
+    <button id="htmlbox">HTML</button>
+    <button id="jsbox">JS</button>
+    <button id="cssbox">CSS</button>
   </div>
 </div>
 <script type="text/javascript">
